@@ -28,9 +28,9 @@ auto const dictFolder = toml::find<std::string>(pathTable, "dict_folder");     /
 auto const outputFolder = toml::find<std::string>(pathTable, "output_folder"); // 输出文件夹
 
 // 路径
-std::string Path = fs::current_path().string();            // 当前绝对路径
-std::string dictFolderPath = Path + "\\" + dictFolder;     // 曲库路径
-std::string outputFolderPath = Path + "\\" + outputFolder; // 输出路径
+std::string const Path = fs::current_path().string();            // 当前绝对路径
+std::string const dictFolderPath = Path + "\\" + dictFolder;     // 曲库路径
+std::string const outputFolderPath = Path + "\\" + outputFolder; // 输出路径
 
 std::vector<std::string> loadDict(const std::string &filePath) {
     std::vector<std::string> dictLines;
@@ -111,8 +111,8 @@ void outputHelp() {
 
 std::vector<std::string> sample(const std::vector<std::string> &input, int num_samples) {
     std::vector<std::string> sampled;
-    std::random_device rd;
-    std::mt19937 gen(rd());
+    std::random_device randomDevice;
+    std::mt19937 gen(randomDevice());
     std::sample(input.begin(), input.end(), std::back_inserter(sampled), num_samples, gen);
     return sampled;
 }

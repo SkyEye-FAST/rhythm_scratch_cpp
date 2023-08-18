@@ -233,7 +233,7 @@ int main() {
         questionList.push_back(question);
     }
     outputToFile(questionList, "Question.txt");
-    std::cout << "输入“?”来查看帮助。\n\n题目：" << std::endl;
+    std::cout << "\n输入“?”来查看帮助。\n\n题目：" << std::endl;
     outputLoopPrint(questionList);
 
     // 刮卡

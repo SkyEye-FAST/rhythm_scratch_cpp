@@ -330,13 +330,10 @@ int main() {
                         openedChar += char_element;
                     }
                     // 使用正则替换刮开字符
-                    std::vector<std::string> new_t;
+                    t.clear();
                     for (const std::string &element : answerList) {
                         std::string new_element = std::regex_replace(element, std::regex("[^" + openedChar + "]"), "*");
-                        new_t.push_back(new_element);
-                    }
-                    for (int i = 0; i < num; i++) {
-                        t[i] = new_t[i];
+                        t.push_back(new_element);
                     }
                     // 将回答正确的全部刮开
                     for (int i = 0; i < num; i++) {
@@ -352,7 +349,7 @@ int main() {
                     outputLoopPrint(t);
                     // 更新暂存
                     tt = t;
-                    t = questionList;
+                    t.clear();
                 }
             }
         } else if (action == "os") {
@@ -375,13 +372,10 @@ int main() {
                     openedChar += char_element;
                 }
                 // 使用正则替换刮开字符
-                std::vector<std::string> new_t;
+                t.clear();
                 for (const std::string &element : answerList) {
                     std::string new_element = std::regex_replace(element, std::regex("[^" + openedChar + "]"), "*");
-                    new_t.push_back(new_element);
-                }
-                for (int i = 0; i < num; i++) {
-                    t[i] = new_t[i];
+                    t.push_back(new_element);
                 }
                 // 将回答正确的全部刮开
                 for (int i = 0; i < num; i++) {
@@ -397,7 +391,7 @@ int main() {
                 outputLoopPrint(t);
                 // 更新暂存
                 tt = t;
-                t = questionList;
+                t.clear();
             }
         } else if (action == "c") {
             if (std::isdigit(parts[1][0]) == 0) {

@@ -1,0 +1,4 @@
+name = "Arcaea"
+version = "v4.6.1"
+dicts = ["arc_slst", "arc_other"]
+# arc_slst为songlist中的曲目，arc_other为愚人节和其他曲目

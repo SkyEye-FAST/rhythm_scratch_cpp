@@ -1,3 +1,3 @@
 name = "Phigros"
-version = "2.18.21"
+version = "3.1.3"
 dicts = ["pgr"]

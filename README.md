@@ -32,8 +32,8 @@
 
 目前仓库内提供的音游曲库如下：
 
-- Arcaea（版本：v4.7.0）
-- Muse Dash（版本：3.6.0）
+- Arcaea（版本：v5.0.1）
+- Muse Dash（版本：3.9.0）
 - Orzmic（版本：2.19.28）
 - Phiros（版本：3.1.3）
 - RYCEAM（版本：v1.0.5）

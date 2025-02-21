@@ -97,16 +97,16 @@ void outputLoopPrint(const std::vector<std::string> &name) {
 }
 
 void outputHelp() {
-    std::cout << "可用命令：" << std::endl;
-    std::cout << "  help | ? - 显示帮助" << std::endl;
-    std::cout << "  exit | e - 退出" << std::endl;
-    std::cout << "  version | ver | v - 列出曲库使用音游版本号" << std::endl;
-    std::cout << "  (heart | h) add [amount] - 增加可用刮开次数" << std::endl;
-    std::cout << "  (heart | h) remove [amount] - 减少可用刮开次数" << std::endl;
-    std::cout << "  (open | o) [character] - 刮开指定字符" << std::endl;
-    std::cout << "  openspace | os - 刮开空格" << std::endl;
-    std::cout << "  (check | c) [index] - 将某题全部刮开" << std::endl;
-    std::cout << "  (show | s) - 显示题目" << std::endl;
+    std::cout << "可用命令：" << '\n';
+    std::cout << "  help | ? - 显示帮助" << '\n';
+    std::cout << "  exit | e - 退出" << '\n';
+    std::cout << "  version | ver | v - 列出曲库使用音游版本号" << '\n';
+    std::cout << "  (heart | h) add [amount] - 增加可用刮开次数" << '\n';
+    std::cout << "  (heart | h) remove [amount] - 减少可用刮开次数" << '\n';
+    std::cout << "  (open | o) [character] - 刮开指定字符" << '\n';
+    std::cout << "  openspace | os - 刮开空格" << '\n';
+    std::cout << "  (check | c) [index] - 将某题全部刮开" << '\n';
+    std::cout << "  (show | s) - 显示题目" << '\n';
 }
 
 std::vector<std::string> sample(const std::vector<std::string> &input, int num_samples) {
@@ -154,11 +154,11 @@ int main() {
         versions.push_back(version);
     }
 
-    std::cout << "音游猜曲名刮刮乐\n作者：SkyEye_FAST\n\n可用的曲库：" << std::endl;
+    std::cout << "音游猜曲名刮刮乐\n作者：SkyEye_FAST\n\n可用的曲库：" << '\n';
 
     // 输出曲库列表
     for (int i = 0; i < games.size(); ++i) {
-        std::cout << i + 1 << ". " << games[i] << "（游戏版本：" << versions[i] << "）" << std::endl;
+        std::cout << i + 1 << ". " << games[i] << "（游戏版本：" << versions[i] << "）" << '\n';
     }
 
     // 选择曲库
@@ -189,7 +189,7 @@ int main() {
     }
 
     if (selected_dicts.empty()) {
-        std::cout << "未按格式输入，请重试。" << std::endl;
+        std::cout << "未按格式输入，请重试。" << '\n';
         return 1;
     }
 
@@ -208,10 +208,10 @@ int main() {
                 std::vector<std::string> dictContent = loadDict(dictFile);
                 selectedDictContent.insert(selectedDictContent.end(), dictContent.begin(), dictContent.end());
             }
-            std::cout << "已加载曲库“" << games[index - 1] << "”。" << std::endl;
+            std::cout << "已加载曲库“" << games[index - 1] << "”。" << '\n';
 
         } else {
-            std::cout << "编号为“" << index << "”的曲库不存在，忽略。" << std::endl;
+            std::cout << "编号为“" << index << "”的曲库不存在，忽略。" << '\n';
         }
     }
 
@@ -220,7 +220,7 @@ int main() {
     selectedDictContent.erase(std::unique(selectedDictContent.begin(), selectedDictContent.end()), selectedDictContent.end());
 
     int totalSelected = selectedDictContent.size();
-    std::cout << "选择曲目总数：" << totalSelected << std::endl;
+    std::cout << "选择曲目总数：" << totalSelected << '\n';
 
     // 生成答案
     std::vector<std::string> answerList = sample(selectedDictContent, num);
@@ -233,7 +233,7 @@ int main() {
         questionList.push_back(question);
     }
     outputToFile(questionList, "Question.txt");
-    std::cout << "\n输入“?”来查看帮助。\n\n题目：" << std::endl;
+    std::cout << "\n输入“?”来查看帮助。\n\n题目：" << '\n';
     outputLoopPrint(questionList);
 
     // 刮卡
@@ -287,7 +287,7 @@ int main() {
             std::exit(0); // 退出程序
         } else if (action == "v") {
             for (int i = 0; i < games.size(); i++) {
-                std::cout << "曲库使用的" << games[i] << "版本：" << versions[i] << std::endl;
+                std::cout << "曲库使用的" << games[i] << "版本：" << versions[i] << '\n';
             }
         } else if (action == "o") {
             if (!isAlive) {
